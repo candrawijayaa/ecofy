@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head class="light">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/css/main.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <title>ecofy.</title>
+  </head>
+  <body class="dark:bg-gray-900 text-white">
+    <button
+      data-drawer-target="default-sidebar"
+      data-drawer-toggle="default-sidebar"
+      aria-controls="default-sidebar"
+      type="button"
+      class="inline-flex items-center p-2 mt-2 ms-3 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+    >
+      <span class="sr-only">Open sidebar</span>
+      <svg
+        class="w-6 h-6"
+        aria-hidden="true"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          clip-rule="evenodd"
+          fill-rule="evenodd"
+          d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"
+        ></path>
+      </svg>
+    </button>
+
+    <aside
+      id="default-sidebar"
+      class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform -translate-x-full sm:translate-x-0"
+      aria-label="Sidebar"
+    >
+      <div class="px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800 rounded-xl m-3" style="height: calc(100vh - 25px);">
+        <ul class="space-y-2 font-medium">
+            <li>
+                <h1 class="text-3xl font-bold px-2 mb-8 text-green-500">
+                    <a href="home.html" onclick="route(event)">
+                        ecofy.
+                    </a>
+                </h1>
+            </li>
+            <li>
+                <a
+                href="home.html"
+                onclick="route(event)"
+                  class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                >
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"/>
+                  </svg>                  
+                  <span class="ms-3">Home</span>
+                </a>
+            </li>
+            <li>
+                <a
+                href="marketplace.html"
+                onclick="route(event)"
+                  class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                >
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 10V6a3 3 0 0 1 3-3v0a3 3 0 0 1 3 3v4m3-2 .917 11.923A1 1 0 0 1 17.92 21H6.08a1 1 0 0 1-.997-1.077L6 8h12Z"/>
+                  </svg>                  
+                  <span class="ms-3">Marketplace</span>
+                </a>
+            </li>
+            <li>
+                <a
+                  href="blogs.html"
+                  onclick="route(event)"
+                  class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group"
+                >
+                <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.03v13m0-13c-2.819-.831-4.715-1.076-8.029-1.023A.99.99 0 0 0 3 6v11c0 .563.466 1.014 1.03 1.007 3.122-.043 5.018.212 7.97 1.023m0-13c2.819-.831 4.715-1.076 8.029-1.023A.99.99 0 0 1 21 6v11c0 .563-.466 1.014-1.03 1.007-3.122-.043-5.018.212-7.97 1.023"/>
+                  </svg>                                   
+                  <span class="ms-3">Blogs</span>
+                </a>
+            </li>
+        </ul>
+      </div>
+    </aside>
+
+    <div id="app" class="sm:ml-64">
+        <!-- code here -->
+    </div>
+
+    <div id="footer" class="sm:ml-64">
+      <footer class="bg-gray-900 text-white py-6 mt-8 rounded-t-2xl">
+      <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Brand & Description -->
+        <div>
+          <h2 class="text-4xl font-bold bg-gradient-to-r from-green-400 to-yellow-200 text-transparent bg-clip-text">ecofy.</h2>
+          <p class="text-gray-400 mt-2">
+            A platform to help you make eco-friendly choices. Join us in making the world greener!
+          </p>
+        </div>
+    
+        <!-- Quick Links -->
+        <div>
+          <h2 class="text-xl font-semibold mb-2">Quick Links</h2>
+          <ul class="text-gray-400 space-y-2">
+            <li><a href="#" class="hover:text-green-400">Home</a></li>
+            <li><a href="#" class="hover:text-green-400">Marketplace</a></li>
+            <li><a href="#" class="hover:text-green-400">Education</a></li>
+            <li><a href="#" class="hover:text-green-400">Challenges</a></li>
+          </ul>
+        </div>
+    
+        <!-- Contact & Social Media -->
+        <div>
+          <h2 class="text-xl font-semibold mb-2">Contact Us</h2>
+          <p class="text-gray-400">
+            Email: 
+            <a href="mailto:info@ecofy.com" class="hover:text-green-400">info@ecofy.com</a>
+          </p>
+          <div class="flex space-x-4 mt-3">
+            <a href="#" class="text-gray-400 hover:text-green-400">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-green-400">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-green-400">
+              <i class="fab fa-instagram"></i>
+            </a>
+          </div>
+        </div>
+    
+      </div>
+    
+      <!-- Copyright -->
+      <div class="text-center text-gray-500 text-sm mt-6 border-t border-gray-700 pt-4">
+        &copy; 2025 ecofy. All rights reserved.
+      </div>
+    </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script src="src/js/home.js"></script>
+  </body>
+</html>
