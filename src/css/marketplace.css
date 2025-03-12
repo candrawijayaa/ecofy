@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background: #1D1F20;
+  color: white;
+  font-size: 14px;
+  font-family: Lato, sans-serif;
+}
+
+img {
+  width: 100%;
+}
+
+.app {
+  height: 90vmin;
+  width: 90vmin;
+  background: white;
+  position: relative;
+  overflow: auto;
+
+  /* Hide the app on load */
+  visibility: hidden;
+}
+
+.item {
+  cursor: pointer;
+  font-size: 0;
+}
+
+
+.detail {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  visibility: hidden;
+  z-index: 1000;
+  overflow: auto;
+}
+
+
+
+.detail.visible {
+  visibility: visible;
+}
+
+.detail img {
+  width: 100%;          
+  max-width: 600px;     
+  max-height: 44vh;    
+  object-fit: cover;    
+  border-radius: 8px;  
+}
+
+
+.detail > img {
+  position: relative;
+  z-index: 1;
+}
+
+.detail .content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 600px;
+  width: 100%;
+}
+
+.detail .content > * {
+  margin-bottom: 1rem;
+}
+
+.detail .title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #1a1a1a;
+}
+
+.detail .secondary {
+  font-size: 1.25rem;
+  color: #666;
+}
+
+.detail .description {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 1rem;
+}
+
+/* Styling untuk tombol Swap dan Add to Cart */
+.detail .swap-btn,
+.detail .add-to-cart-btn {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 9999px;
+  transition: background-color 0.3s ease;
+}
+
+.detail .swap-btn {
+  background-color: #3b82f6; /* Warna biru */
+}
+
+.detail .swap-btn:hover {
+  background-color: #2563eb; /* Warna biru lebih gelap saat hover */
+}
+
+.detail .add-to-cart-btn {
+  background-color: #10b981; /* Warna hijau */
+}
+
+.detail .add-to-cart-btn:hover {
+  background-color: #059669; /* Warna hijau lebih gelap saat hover */
+}
+
+/* Sembunyikan tombol */
+.product-card .add-to-cart-btn {
+  display: none;
+}
+
+.product-card .swap-btn {
+  display: none;
+}
+
